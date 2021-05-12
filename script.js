@@ -53,6 +53,8 @@ function displayResults(json) {
             // console.log(currentRow);
             let tableData =document.createElement('td');
             let currentRow = document.querySelector('.row'+i);
+            let createRaceLink = document.createElement('a');
+            let createCircuitLink = document.createElement('a');
             // let link = document.createElement('a');
             // currentRow.appendChild(tableData);
             // };
@@ -69,7 +71,11 @@ function displayResults(json) {
                 let roundNumber = currentRow.firstChild;
                 roundNumber.textContent = currentRace.round;
                 let raceName = roundNumber.nextSibling;
-                raceName.textContent = currentRace.raceName;
+                // raceName.textContent = currentRace.raceName;
+                raceName.appendChild(createRaceLink);
+                raceName.firstChild.textContent= currentRace.raceName;
+                raceName.firstChild.href = currentRace.url;
+                raceName.firstChild.target = "_blank";
                 let raceDate = raceName.nextSibling;
                 raceDate.textContent = currentRace.date;
                 let raceCity = raceDate.nextSibling;
@@ -77,7 +83,11 @@ function displayResults(json) {
                 let raceCountry = raceCity.nextSibling;
                 raceCountry.textContent = currentRace.Circuit.Location.country;
                 let circuitName = raceCountry.nextSibling;
-                circuitName.textContent = currentRace.Circuit.circuitName;
+                // circuitName.textContent = currentRace.Circuit.circuitName;
+                circuitName.appendChild(createCircuitLink);
+                circuitName.firstChild.textContent= currentRace.Circuit.circuitName;
+                circuitName.firstChild.href = currentRace.Circuit.url;
+                circuitName.firstChild.target = "_blank";
             }
             
     }
