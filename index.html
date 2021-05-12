@@ -8,15 +8,17 @@
     <title>API Challenge</title>
 </head>
 <body>
-    <h1 class='title'>Search For Formula 1 Races By Year</h1>
+    <div class="wrapper">
+    <h2 class='title'>Search For Formula 1 Races By Year</h2>
     <form>
-        <label for="yearInput">Enter a year (1950-2021):</label>
+        <label for="yearInput">Enter Year (1950-2021):</label>
         <br>
         <input type="year" id="yearInput" class="yearInput" required pattern="[0-9]{4}" placeholder="YYYY"></input>
         <p>
             <button class="submit">Submit</button>
         </p>
     </form>
+    </div>
     <div class="results">
     </div>
     <script src="./script.js"></script>
