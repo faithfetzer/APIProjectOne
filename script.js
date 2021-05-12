@@ -1,4 +1,4 @@
-const baseURL = 'http://ergast.com/api/f1/';
+const baseURL = 'https://ergast.com/api/f1/';
 let apiURL;
 const yearEntered = document.querySelector('.yearInput');
 const resultsData = document.querySelector('.results');
@@ -16,8 +16,9 @@ function fetchResults(e) {
             return result.json();
         // }) .then(function(json){
         //     console.log(json);
-        }) .then(function(json){
-            displayResults(json);
+        }) 
+        .then(function(json){
+             displayResults(json);
         })
 };
 
